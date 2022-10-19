@@ -24,6 +24,10 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'Manage Patients']);
 
         $programRole = Role::create(['name' => 'Program Person']);
-        $programRole->give
+        $programRole->givePermissionTo('View Facilities');
+        $programRole->givePermissionTo('View Users');
+        $programRole->givePermissionTo('View Patients');
+        $programRole->givePermissionTo('Manage Users');
+        $programRole->givePermissionTo('Manage Patients');
     }
 }
